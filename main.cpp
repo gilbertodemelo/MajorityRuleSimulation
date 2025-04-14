@@ -72,6 +72,15 @@ bool is_weakly_connected(uint8_t **matrix, int n) {
 }
 
 
+uint8_t ***filter_weakly_connected(uint8_t ***matrices, size_t count, int n, size_t *filtered_count) {
+    uint8_t ***filtered = new uint8_t[count];
+    size_t *local_counts = new size_t[omp_get_max_threads()];
+    uint8_t ***local_buffers = new uint8_t[omp_get_max_threads()];
+
+
+}
+
+
 //************************************    APPLY MAJORITY RULE     ************************************//
 
 
