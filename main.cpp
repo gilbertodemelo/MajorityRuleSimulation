@@ -77,7 +77,14 @@ uint8_t ***filter_weakly_connected(uint8_t ***matrices, size_t count, int n, siz
     size_t *local_counts = new size_t[omp_get_max_threads()];
     uint8_t ***local_buffers = new uint8_t[omp_get_max_threads()];
 
+#pragma omp parallel
+    {
+        int tid = omp_get_thread_num();
+        size_t local_cap = count / omp_get_num_threads() + 1;
+        uint8_t ***local = new uint8_t[local_cap];
+        size_t local_index = 0;
 
+    }
 }
 
 
