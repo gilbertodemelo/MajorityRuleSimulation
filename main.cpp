@@ -12,18 +12,18 @@ uint8_t ***generate_matrices(int n, size_t *out_count) {
     size_t total = 1ULL << (n * n);  // total = 2^(n^2)
     *out_count = total;
 
-    // Aloca array de ponteiros para ponteiros (matrizes)
+
     uint8_t ***matrices = new uint8_t**[total];
 
 #pragma omp parallel for schedule(static)
     for (size_t k = 0; k < total; k++) {
-        // Aloca uma matriz n x n
+
         uint8_t **matrix = new uint8_t*[n];
         for (int i = 0; i < n; i++) {
             matrix[i] = new uint8_t[n];
         }
 
-        // Preenche a matriz com bits de k
+
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
             int col = i % n;
