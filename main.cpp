@@ -88,9 +88,21 @@ uint8_t ***filter_weakly_connected(uint8_t ***matrices, size_t count, int n, siz
 }
 
 
+
+
+
 //************************************    APPLY MAJORITY RULE     ************************************//
 
 
+int main(int argc, char *argv[]) {
 
+    size_t qtde_matrices;
+    uint8_t ***matrices = generate_matrices(3, &qtde_matrices);
+
+    std::cout << qtde_matrices << std::endl;
+
+    return EXIT_SUCCESS;
+
+}
 
 
